@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { toast } from 'react-toastify';
-import Button from '@/components/atoms/Button';
-import SearchBar from '@/components/molecules/SearchBar';
-import Modal from '@/components/molecules/Modal';
-import SkeletonLoader from '@/components/molecules/SkeletonLoader';
-import ErrorState from '@/components/molecules/ErrorState';
-import EmptyState from '@/components/molecules/EmptyState';
-import ContactTable from '@/components/organisms/ContactTable';
-import ContactForm from '@/components/organisms/ContactForm';
-import contactService from '@/services/api/contactService';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "react-toastify";
+import contactService from "@/services/api/contactService";
+import SkeletonLoader from "@/components/molecules/SkeletonLoader";
+import EmptyState from "@/components/molecules/EmptyState";
+import Modal from "@/components/molecules/Modal";
+import SearchBar from "@/components/molecules/SearchBar";
+import ErrorState from "@/components/molecules/ErrorState";
+import ContactForm from "@/components/organisms/ContactForm";
+import ContactTable from "@/components/organisms/ContactTable";
+import Button from "@/components/atoms/Button";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
@@ -17,11 +17,12 @@ const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [showCreateModal, setShowCreateModal] = useState(false);
+const [showCreateModal, setShowCreateModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [selectedContact, setSelectedContact] = useState(null);
   const [statusFilter, setStatusFilter] = useState('all');
-
+  const [showFilterBuilder, setShowFilterBuilder] = useState(false);
+  const [advancedFilters, setAdvancedFilters] = useState({});
   const statusOptions = [
     { value: 'all', label: 'All Contacts' },
     { value: 'active', label: 'Active' },
@@ -53,23 +54,23 @@ const Contacts = () => {
     }
   };
 
-  const filterContacts = () => {
+const filterContacts = () => {
     let filtered = [...contacts];
 
     // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(contact =>
-        contact.name.toLowerCase().includes(query) ||
-        contact.email.toLowerCase().includes(query) ||
-        contact.company.toLowerCase().includes(query) ||
-        contact.phone.toLowerCase().includes(query)
+        contact?.name?.toLowerCase().includes(query) ||
+        contact?.email?.toLowerCase().includes(query) ||
+        contact?.company?.toLowerCase().includes(query) ||
+        contact?.phone?.toLowerCase().includes(query)
       );
     }
 
     // Filter by status
     if (statusFilter !== 'all') {
-      filtered = filtered.filter(contact => contact.status === statusFilter);
+      filtered = filtered.filter(contact => contact?.status === statusFilter);
     }
 
     setFilteredContacts(filtered);
@@ -86,10 +87,15 @@ const Contacts = () => {
     }
   };
 
-  const handleEditContact = async (contactData) => {
+const handleEditContact = async (contactData) => {
+    if (!selectedContact?.Id) {
+      toast.error('No contact selected for update');
+      return;
+    }
+    
     try {
       const updatedContact = await contactService.update(selectedContact.Id, contactData);
-      setContacts(prev => prev.map(c => c.Id === updatedContact.Id ? updatedContact : c));
+      setContacts(prev => prev.map(c => c?.Id === updatedContact?.Id ? updatedContact : c));
       setShowEditModal(false);
       setSelectedContact(null);
       toast.success('Contact updated successfully');
@@ -98,11 +104,16 @@ const Contacts = () => {
     }
   };
 
-  const handleDeleteContact = async (contact) => {
+const handleDeleteContact = async (contact) => {
+    if (!contact?.Id || !contact?.name) {
+      toast.error('Invalid contact data');
+      return;
+    }
+    
     if (window.confirm(`Are you sure you want to delete ${contact.name}?`)) {
       try {
         await contactService.delete(contact.Id);
-        setContacts(prev => prev.filter(c => c.Id !== contact.Id));
+        setContacts(prev => prev.filter(c => c?.Id !== contact.Id));
         toast.success('Contact deleted successfully');
       } catch (error) {
         toast.error(error.message || 'Failed to delete contact');
@@ -163,26 +174,54 @@ const Contacts = () => {
         </Button>
       </div>
 
-      {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <div className="flex-1 max-w-md">
-          <SearchBar
-            placeholder="Search contacts..."
-            onSearch={setSearchQuery}
-          />
+{/* Filters */}
+      <div className="space-y-4">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex-1 max-w-md">
+            <SearchBar
+              placeholder="Search contacts..."
+              onSearch={setSearchQuery}
+              onAdvancedFilter={() => setShowFilterBuilder(!showFilterBuilder)}
+            />
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {statusOptions.map(option => (
+              <Button
+                key={option.value}
+                size="sm"
+                variant={statusFilter === option.value ? 'primary' : 'outline'}
+                onClick={() => setStatusFilter(option.value)}
+              >
+                {option.label}
+              </Button>
+            ))}
+          </div>
         </div>
-        <div className="flex gap-2 flex-wrap">
-          {statusOptions.map(option => (
-            <Button
-              key={option.value}
-              size="sm"
-              variant={statusFilter === option.value ? 'primary' : 'outline'}
-              onClick={() => setStatusFilter(option.value)}
+
+<AnimatePresence>
+          {showFilterBuilder && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="bg-gray-50 p-4 rounded-lg border"
             >
-              {option.label}
-            </Button>
-          ))}
-        </div>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-medium text-gray-900">Advanced Filters</h3>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => setShowFilterBuilder(false)}
+                >
+                  Close
+                </Button>
+              </div>
+              <p className="text-sm text-gray-600">
+                Advanced filtering functionality will be available in a future update.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Content */}
