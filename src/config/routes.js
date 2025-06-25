@@ -3,7 +3,7 @@ import Contacts from '@/components/pages/Contacts';
 import Deals from '@/components/pages/Deals';
 import Tasks from '@/components/pages/Tasks';
 import Activities from '@/components/pages/Activities';
-
+import EmailThreads from '@/components/pages/EmailThreads';
 export const routes = {
   dashboard: {
     id: 'dashboard',
@@ -33,12 +33,19 @@ export const routes = {
     icon: 'CheckSquare',
     component: Tasks
   },
-  activities: {
+activities: {
     id: 'activities',
     label: 'Activities',
     path: '/activities',
     icon: 'Activity',
     component: Activities
+  },
+  emails: {
+    id: 'emails',
+    label: 'Emails',
+    path: '/emails',
+    icon: 'Mail',
+    component: EmailThreads
   }
 };
 

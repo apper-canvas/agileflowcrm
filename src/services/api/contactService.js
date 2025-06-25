@@ -52,13 +52,21 @@ const contactService = {
     return true;
   },
 
-  async search(query) {
+async search(query) {
     await delay(200);
     const lowerQuery = query.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(lowerQuery) ||
       contact.email.toLowerCase().includes(lowerQuery) ||
       contact.company.toLowerCase().includes(lowerQuery)
+    );
+  },
+
+  async searchByEmail(email) {
+    await delay(200);
+    const lowerEmail = email.toLowerCase();
+    return contacts.find(contact =>
+      contact.email.toLowerCase() === lowerEmail
     );
   }
 };

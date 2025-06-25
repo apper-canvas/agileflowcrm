@@ -1,0 +1,94 @@
+[
+  {
+    "Id": 1,
+    "subject": "Partnership Proposal Discussion",
+    "threadId": "thread_001",
+    "from": "sarah.johnson@techcorp.com",
+    "to": ["john.doe@flowcrm.com"],
+    "cc": [],
+    "bcc": [],
+    "body": "Hi John,\n\nI hope this email finds you well. I wanted to reach out regarding the partnership proposal we discussed last week. After reviewing our requirements, I believe there's a great opportunity for collaboration between TechCorp Solutions and FlowCRM.\n\nWould you be available for a call this Thursday to discuss the next steps?\n\nBest regards,\nSarah Johnson",
+    "isRead": true,
+    "isStarred": false,
+    "contactId": 1,
+    "priority": "normal",
+    "createdAt": "2024-01-22T09:15:00Z",
+    "attachments": []
+  },
+  {
+    "Id": 2,
+    "subject": "RE: Partnership Proposal Discussion",
+    "threadId": "thread_001",
+    "from": "john.doe@flowcrm.com",
+    "to": ["sarah.johnson@techcorp.com"],
+    "cc": [],
+    "bcc": [],
+    "body": "Hi Sarah,\n\nThank you for reaching out! I'm excited about the potential partnership as well. Thursday works perfectly for me - how about 2:00 PM EST?\n\nI'll send over a calendar invite with the meeting details.\n\nLooking forward to our discussion!\n\nBest,\nJohn",
+    "isRead": true,
+    "isStarred": true,
+    "contactId": 1,
+    "priority": "normal",
+    "createdAt": "2024-01-22T14:30:00Z",
+    "attachments": []
+  },
+  {
+    "Id": 3,
+    "subject": "Technical Integration Questions",
+    "threadId": "thread_002",
+    "from": "m.chen@innovatetech.io",
+    "to": ["john.doe@flowcrm.com"],
+    "cc": ["tech-team@flowcrm.com"],
+    "bcc": [],
+    "body": "Hi John,\n\nI have a few technical questions about the API integration:\n\n1. What authentication method do you recommend?\n2. Are there rate limits we should be aware of?\n3. Do you have sandbox environment for testing?\n\nOur development team is eager to get started. Please let me know when you have a chance to review these questions.\n\nThanks,\nMichael Chen\nCTO, InnovateTech",
+    "isRead": false,
+    "isStarred": false,
+    "contactId": 2,
+    "priority": "high",
+    "createdAt": "2024-01-23T11:45:00Z",
+    "attachments": [
+      {
+        "name": "api_requirements.pdf",
+        "size": "245KB",
+        "type": "application/pdf"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "subject": "Investment Opportunity Update",
+    "threadId": "thread_003",
+    "from": "emily.r@globalventures.com",
+    "to": ["john.doe@flowcrm.com"],
+    "cc": [],
+    "bcc": [],
+    "body": "John,\n\nI wanted to give you a quick update on our investment committee's review of FlowCRM. The feedback has been overwhelmingly positive!\n\nWe'd like to schedule a formal presentation with the full committee. Are you available next week?\n\nAlso, please find the due diligence checklist attached for your review.\n\nBest regards,\nEmily Rodriguez\nPartner, Global Ventures",
+    "isRead": true,
+    "isStarred": true,
+    "contactId": 3,
+    "priority": "high",
+    "createdAt": "2024-01-23T16:20:00Z",
+    "attachments": [
+      {
+        "name": "due_diligence_checklist.docx",
+        "size": "128KB",
+        "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "subject": "Welcome to Our Newsletter",
+    "threadId": "thread_004",
+    "from": "noreply@futuretech.net",
+    "to": ["john.doe@flowcrm.com"],
+    "cc": [],
+    "bcc": [],
+    "body": "Hi John,\n\nThank you for subscribing to FutureTech Industries newsletter! You'll now receive our monthly updates about industry trends and product announcements.\n\nIf you have any questions, feel free to reach out to our team.\n\nBest regards,\nFutureTech Industries Team",
+    "isRead": false,
+    "isStarred": false,
+    "contactId": 5,
+    "priority": "low",
+    "createdAt": "2024-01-24T08:30:00Z",
+    "attachments": []
+  }
+]
