@@ -1,0 +1,61 @@
+[
+  {
+    "Id": 1,
+    "type": "email",
+    "description": "Sent proposal document to Sarah Johnson",
+    "contactId": 1,
+    "dealId": 1,
+    "timestamp": "2024-01-22T10:30:00Z",
+    "metadata": {
+      "subject": "TechCorp Enterprise Proposal",
+      "attachments": ["proposal.pdf"]
+    }
+  },
+  {
+    "Id": 2,
+    "type": "call",
+    "description": "30-minute discovery call with Michael Chen",
+    "contactId": 2,
+    "dealId": 2,
+    "timestamp": "2024-01-21T14:00:00Z",
+    "metadata": {
+      "duration": 30,
+      "outcome": "positive"
+    }
+  },
+  {
+    "Id": 3,
+    "type": "meeting",
+    "description": "Product demo for Global Ventures team",
+    "contactId": 3,
+    "dealId": 3,
+    "timestamp": "2024-01-20T15:30:00Z",
+    "metadata": {
+      "attendees": 5,
+      "location": "Zoom"
+    }
+  },
+  {
+    "Id": 4,
+    "type": "note",
+    "description": "Contact expressed interest in Q2 implementation",
+    "contactId": 1,
+    "dealId": 1,
+    "timestamp": "2024-01-19T16:45:00Z",
+    "metadata": {
+      "category": "opportunity"
+    }
+  },
+  {
+    "Id": 5,
+    "type": "task",
+    "description": "Completed initial needs assessment for Nexus Group",
+    "contactId": 4,
+    "dealId": 4,
+    "timestamp": "2024-01-18T11:20:00Z",
+    "metadata": {
+      "taskId": 4,
+      "status": "completed"
+    }
+  }
+]

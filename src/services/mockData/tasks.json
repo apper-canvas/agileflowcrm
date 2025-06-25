@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "title": "Follow up on TechCorp proposal",
+    "description": "Schedule demo call with Sarah to discuss enterprise features",
+    "dueDate": "2024-01-25T14:00:00Z",
+    "priority": "high",
+    "status": "pending",
+    "contactId": 1,
+    "dealId": 1,
+    "assignedTo": "John Doe"
+  },
+  {
+    "Id": 2,
+    "title": "Send InnovateTech pricing options",
+    "description": "Prepare customized pricing sheet for startup package",
+    "dueDate": "2024-01-24T10:00:00Z",
+    "priority": "medium",
+    "status": "pending",
+    "contactId": 2,
+    "dealId": 2,
+    "assignedTo": "John Doe"
+  },
+  {
+    "Id": 3,
+    "title": "Research Global Ventures requirements",
+    "description": "Analyze their current infrastructure and pain points",
+    "dueDate": "2024-01-26T16:00:00Z",
+    "priority": "high",
+    "status": "in-progress",
+    "contactId": 3,
+    "dealId": 3,
+    "assignedTo": "John Doe"
+  },
+  {
+    "Id": 4,
+    "title": "Initial call with David Williams",
+    "description": "Discovery call to understand Nexus Group needs",
+    "dueDate": "2024-01-23T11:00:00Z",
+    "priority": "medium",
+    "status": "completed",
+    "contactId": 4,
+    "dealId": 4,
+    "assignedTo": "John Doe"
+  },
+  {
+    "Id": 5,
+    "title": "Prepare quarterly business review",
+    "description": "Compile performance metrics and next quarter goals",
+    "dueDate": "2024-01-28T09:00:00Z",
+    "priority": "low",
+    "status": "pending",
+    "contactId": null,
+    "dealId": null,
+    "assignedTo": "John Doe"
+  }
+]

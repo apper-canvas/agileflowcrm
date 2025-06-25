@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "title": "TechCorp Enterprise License",
+    "value": 125000,
+    "stage": "proposal",
+    "contactId": 1,
+    "probability": 75,
+    "expectedCloseDate": "2024-02-15T00:00:00Z",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "InnovateTech Startup Package",
+    "value": 45000,
+    "stage": "negotiation",
+    "contactId": 2,
+    "probability": 60,
+    "expectedCloseDate": "2024-02-28T00:00:00Z",
+    "createdAt": "2024-01-18T09:20:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "Global Ventures Investment Platform",
+    "value": 350000,
+    "stage": "qualified",
+    "contactId": 3,
+    "probability": 40,
+    "expectedCloseDate": "2024-03-15T00:00:00Z",
+    "createdAt": "2024-01-12T11:45:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Nexus Group Consulting",
+    "value": 75000,
+    "stage": "lead",
+    "contactId": 4,
+    "probability": 25,
+    "expectedCloseDate": "2024-04-01T00:00:00Z",
+    "createdAt": "2024-01-21T15:20:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "FutureTech Renewal",
+    "value": 95000,
+    "stage": "closed-won",
+    "contactId": 5,
+    "probability": 100,
+    "expectedCloseDate": "2024-01-30T00:00:00Z",
+    "createdAt": "2024-01-08T13:10:00Z"
+  }
+]

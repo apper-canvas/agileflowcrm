@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "+1 (555) 123-4567",
+    "company": "TechCorp Solutions",
+    "status": "active",
+    "tags": ["enterprise", "decision-maker"],
+    "createdAt": "2024-01-15T10:30:00Z",
+    "lastContactedAt": "2024-01-20T14:15:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Michael Chen",
+    "email": "m.chen@innovatetech.io",
+    "phone": "+1 (555) 234-5678",
+    "company": "InnovateTech",
+    "status": "prospect",
+    "tags": ["startup", "cto"],
+    "createdAt": "2024-01-18T09:20:00Z",
+    "lastContactedAt": "2024-01-22T16:45:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Emily Rodriguez",
+    "email": "emily.r@globalventures.com",
+    "phone": "+1 (555) 345-6789",
+    "company": "Global Ventures",
+    "status": "active",
+    "tags": ["investor", "high-value"],
+    "createdAt": "2024-01-12T11:45:00Z",
+    "lastContactedAt": "2024-01-19T10:30:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "David Williams",
+    "email": "david.w@nexusgroup.org",
+    "phone": "+1 (555) 456-7890",
+    "company": "Nexus Group",
+    "status": "lead",
+    "tags": ["referral", "warm"],
+    "createdAt": "2024-01-21T15:20:00Z",
+    "lastContactedAt": null
+  },
+  {
+    "Id": 5,
+    "name": "Lisa Thompson",
+    "email": "lisa.thompson@futuretech.net",
+    "phone": "+1 (555) 567-8901",
+    "company": "FutureTech Industries",
+    "status": "inactive",
+    "tags": ["past-client", "renewal-opportunity"],
+    "createdAt": "2024-01-08T13:10:00Z",
+    "lastContactedAt": "2024-01-16T12:00:00Z"
+  }
+]
