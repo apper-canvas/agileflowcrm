@@ -161,9 +161,9 @@ const DealForm = ({ deal, onSubmit, onCancel }) => {
         />
       </div>
 
-      <FormField
+<FormField
         label="Expected Close Date"
-        type="date"
+        type="datepicker"
         value={formData.expectedCloseDate}
         onChange={(e) => handleChange('expectedCloseDate', e.target.value)}
         error={errors.expectedCloseDate}

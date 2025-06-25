@@ -137,10 +137,10 @@ const TaskForm = ({ task, onSubmit, onCancel }) => {
         rows={3}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <FormField
           label="Due Date"
-          type="date"
+          type="datepicker"
           value={formData.dueDate}
           onChange={(e) => handleChange('dueDate', e.target.value)}
           error={errors.dueDate}
